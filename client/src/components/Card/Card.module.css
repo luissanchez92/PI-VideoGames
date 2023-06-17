@@ -1,0 +1,10 @@
+.mainContainer{
+    border: 1px solid black;
+    background-color: chocolate;
+}
+
+
+.cardImage{
+    width: 250px;
+    border-radius: 30px 15px 30px 15px;
+}

@@ -1,0 +1,22 @@
+.mainContainer{
+    border: 1px solid black;
+}
+
+.divContainer{
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 700px;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.buttonForm{
+    width: 100px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    border: 3px solid black;
+}
