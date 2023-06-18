@@ -1,3 +1,39 @@
+.titleLanding{
+    font-family: cursive;
+    font-size: 40px;
+    color: aliceblue;
+
+}
+
 .mainContainer{
-    background-color: forestgreen;
+    background-image: url(/src/assets/Guia-legal-de-los-videojuegos.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.text{
+    font-family: cursive;
+    font-size: 30px;
+    color: aliceblue;
+
+}
+
+.button{
+    width: 120px;
+    height: 40px;
+    background-color: #0fd4dd ;
+    border-radius: 15px;
+    border: solid black 2px;
+    margin-top: 5px;
+    font-family: cursive;
+    font-size: 20px;
+
+}
+.linkButton{
+    text-decoration: none;
+    color: black;
+
 }

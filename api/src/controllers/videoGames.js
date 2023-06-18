@@ -149,7 +149,7 @@ const getVideoGameQuery=async(name)=>{
         return {
             id: element.id,
             name: element.name,
-            imgen: element.background_image,
+            imagen: element.background_image,
             genres: element.genres.map(element=>element.name),
             released:element.released,
             rating:element.rating,

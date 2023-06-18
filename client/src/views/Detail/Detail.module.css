@@ -1,5 +1,52 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+}
+.divContainer{
+    background-color: #9ca3ad;
+    height: auto;
+    width: 800px;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .videoImage{
-    width: 250px;
-    border-radius: 30px 15px 30px 15px;
+    width: 350px;
+    height: 300px;
+    border-radius: 15px;
+
+}
+
+.buttonBack{
+    margin-bottom: 20px;
+    width: 120px;
+    height: 40px;
+    background-color: #0fd4dd ;
+    border-radius: 15px;
+    border: solid black 2px;
+    transition-duration: 0.9s;
+
+    .buttonBack:hover{
+        background-color: #088dbc;
+        color: #0fd4dd;
+
+    }
+}
+
+.title{
+    font-family: cursive;
+    font-size: 30px;
+}
+.detail{
+    font-family: cursive;
+    font-size: 20px;
+
+}
+.NavLink{
+    text-decoration: none;
+    color: black;
+    font-family: cursive;
+    font-size: 25px;
 
 }

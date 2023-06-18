@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import {getGenres, getVideoGames} from '../../redux/actions'
 import validation from './validation';
+import { NavLink } from 'react-router-dom'
 import axios from 'axios';
+
 
 
 const Form = () => {
@@ -115,64 +117,72 @@ const Form = () => {
   return (
 
     <form onSubmit={handleSubmit} className={style.mainContainer}>
+
         <div className={style.divContainer}>
-          <h2>Registration</h2>
-          <label htmlFor='name'>Name:</label>
+
+          <h2 className={style.titleH2}>Registration</h2>
+
+          <label htmlFor='name' className={style.formName}>Name:</label>
             <input
               type='text'
               name='name'
               value={form.name}
               onChange={handlerChange}
               placeholder='Enter the name.'
+              className={style.inputName}
             />
             {error.name ? <span>{error.name}</span> : ''}
 
-          <label>Description:</label>
+          <label htmlFor='description' className={style.formDescription}>Description:</label>
             <input
               type='text'
               name='description'
               value={form.description}
               onChange={handlerChange}
               placeholder='Enter the description.'
+              className={style.inputDescription}
             />
             {error.description ? <span>{error.description}</span> : ''}
 
-          <label>Released:</label> 
+          <label className={style.formReleased}>Released:</label> 
             <input
               type='date'
               name='released'
               value={form.released}
               onChange={handlerChange}
               placeholder='Enter the released.'
+              className={style.inputReleased}
             />
             {error.released ? <span>{error.released}</span> : ''}
 
-          <label>Rating:</label>
+          <label className={style.formRating}>Rating:</label>
             <input
               type='number'
               name='rating'
               value={form.rating}
               onChange={handlerChange}
               placeholder='Enter the rating.'
+              className={style.inputRating}
             />
             {error.rating ? <span>{error.rating}</span> : ''}
 
-          <label>Image</label>
+          <label className={style.formImage}>Image:</label>
             <input
               type='url'
               name='imagen'
               value={form.imagen}
               onChange={handlerChange}
               placeholder='Enter a link image.'
+              className={style.inputImage}
             />
             {error.imagen ? <span>{error.imagen}</span> : ''}
 
             <div>
-              <h3>SELECT PLATFORMS</h3>
+              <h3 className={style.platformH3}>SELECT PLATFORMS</h3>
 
               {
                 platformsFilter?.map((element, index)=>(
-                  <label htmlFor={element} key={index}>{element}
+                  <label htmlFor={element} key={index} className={style.textPlatforms}>{element}
                     <input type='checkbox' name={element} key={index} value={form.platforms} onChange={handlerChangePlatform}/>
                   </label>
                 ))
@@ -182,11 +192,11 @@ const Form = () => {
             <span>{error.platforms && form.platforms.length===0 ? <span>{error.platforms}</span> : ''}</span>
 
             <div>
-              <h3>SELECT GENRES</h3>
+              <h3 className={style.genresH3}>SELECT GENRES</h3>
 
               {
                 genreState?.map((element, index)=>(
-                  <label htmlFor={element} key={index}>{element}
+                  <label htmlFor={element} key={index} className={style.textPlatforms}>{element}
                     <input type='checkbox' name={index+1} key={index} value={form.genres} onChange={handlerChangeGenre}/>
                   </label>
                 ))
@@ -195,9 +205,15 @@ const Form = () => {
             </div>
             <span>{error.genres && form.genres.length===0 ? <span>{error.genres}</span> : ''}</span>
 
-          <button disabled={!form.name  || !form.description || !form.rating || !form.imagen || !form.released || !form.platforms || !form.genres || form.platforms.length===0 || form.genres.length===0 }
-           className={style.buttonForm}>CREATE VIDEOGAME
+          <div className={style.divButton}>
+          <button className={style.buttonBack}>
+            <NavLink to='/home' className={style.NavLink}>Back</NavLink>
           </button>
+          <button disabled={!form.name  || !form.description || !form.rating || !form.imagen || !form.released || !form.platforms || !form.genres || form.platforms.length===0 || form.genres.length===0 }
+           className={style.buttonForm}>CREATE
+          </button>
+
+          </div>
         </div>
     </form>
   )

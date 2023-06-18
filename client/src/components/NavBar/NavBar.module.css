@@ -1,9 +1,64 @@
 .mainContainer{
    border: 2px solid black;
-   border-radius: 15px;
-   height: 40px;
+   border-radius: 0px 0px 30px 30px;
+   background-color: aquamarine;
+   height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+}
+
+.buttonHome{
+    width: 120px;
+    height: 40px;
+    background-color: #0fd4dd ;
+    border-radius: 15px;
+    border: solid black 2px;
+    margin-top: 5px;
+    font-family: cursive;
+    font-size: 20px;
+
+}
+
+.buttonCreate{
+    width: 120px;
+    height: 40px;
+    background-color: #0fd4dd ;
+    border-radius: 15px;
+    border: solid black 2px;
+    margin-top: 5px;
+    font-family: cursive;
+    font-size: 20px;
+
+}
+
+.buttonSearch{
+    width: 120px;
+    height: 40px;
+    background-color: #0fd4dd ;
+    border-radius: 15px;
+    border: solid black 2px;
+    margin-top: 5px;
+    font-family: cursive;
+    font-size: 20px;
+
+}
+
+.label{
+    margin-top: 10px;
+    font-family: cursive;
+    font-size: 20px;
+}
+.input{
+    border: solid black 2px;
+    margin-left: 4px;
+    height: 40px;
+    margin-top: 2px;
+
+}
+.NavLink{
+    text-decoration: none;
+    color: black;
 
 }

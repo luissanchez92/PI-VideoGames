@@ -1,22 +1,130 @@
 .mainContainer{
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
 }
 
 .divContainer{
     border: 3px solid black;
+    background-color: #9ca3ad;
     border-radius: 15px;
-    background-color: aqua;
     display: flex;
     flex-direction: column;
     width: 800px;
-    height: 700px;
+    height: auto;
     align-content: center;
     margin-top: 10px;
 }
 
+.titleH2{
+    font-family: cursive;
+    font-size: 30px;
+}
+
+.divButton{
+    margin-top: 30px;
+}
+
+.formName{
+    font-family: cursive;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.inputName{
+    height: 20px;
+    border-radius: 5px;
+}
+
+
+.formDescription{
+    font-family: cursive;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.inputDescription{
+    height: 20px;
+    border-radius: 5px;
+}
+
+.formReleased{
+    font-family: cursive;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.inputReleased{
+    height: 20px;
+    border-radius: 5px;
+}
+
+.formRating{
+    font-family: cursive;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.inputRating{
+    height: 20px;
+    border-radius: 5px;
+}
+
+.formImage{
+    font-family: cursive;
+    font-size: 25px;
+    padding: 5px;
+}
+
+.inputImage{
+    height: 20px;
+    border-radius: 5px;
+
+}
+
+
+.platformH3{
+    font-family: cursive;
+    font-size: 20px;
+}
+
+.genresH3{
+    font-family: cursive;
+    font-size: 20px;
+}
+
+
 .buttonForm{
-    width: 100px;
-    border-radius: 10px;
-    background-color: blueviolet;
-    border: 3px solid black;
+    width: 120px;
+    height: 40px;
+    background-color: #0fd4dd ;
+    border-radius: 15px;
+    border: solid black 2px;
+    margin-top: 5px;
+    font-family: cursive;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.buttonBack{
+    width: 120px;
+    height: 40px;
+    background-color: #0fd4dd ;
+    border-radius: 15px;
+    border: solid black 2px;
+    margin-top: 5px;
+    font-family: cursive;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+
+.NavLink{
+    text-decoration: none;
+    color: black;
+
+}
+.textPlatforms{
+    font-family: cursive;
 }
