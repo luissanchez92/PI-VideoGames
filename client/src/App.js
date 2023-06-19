@@ -17,9 +17,7 @@ function App() {
         <Route path='/navbar' component={NavBar}/>
         <Route path='/create' component={Form}/>
       </Switch>
-    
-   
-
+      
     </div>
   );
 }

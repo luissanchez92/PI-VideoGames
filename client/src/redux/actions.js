@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_GAMES, GET_GAME_ID, GET_GAME_NAME, GET_GENRES } from './action_type';
+import { GET_GAMES, GET_GAME_ID, GET_GAME_NAME, GET_GENRES, GET_ORIGIN, GET_GENREFILTER, GET_ORDER } from './action_type';
 
 export const getVideoGames = () => {
     return async function(dispatch){
@@ -42,3 +42,30 @@ export const getGenres=()=>{
     }
 }
 
+export const getGenreFilter=(genre)=>{
+    return async function(dispatch){
+        return dispatch({
+            type: GET_GENREFILTER,
+            payload: genre
+        })
+    }
+}
+
+export const getOrder=(order)=>{
+    return async function(dispatch){
+        return dispatch({
+            type: GET_ORDER,
+            payload: order
+        })
+    }
+}
+
+export const getOrigin=(origin)=>{
+    return async function(dispatch){
+        return dispatch({
+            typeof: GET_ORIGIN,
+            payload: origin
+        })
+    }
+
+}

@@ -1,16 +1,16 @@
-import React from 'react'
+/*import React from 'react'
 import Cards from '../../components/Cards/Cards'
 import NavBar from '../../components/NavBar/NavBar'
 import { useEffect,useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {getVideoGames, getNameVideoGame, getGenres, getOrigin, getGenreFilter, getOrder} from '../../redux/actions'
+import {getVideoGames, getNameVideoGame, getGenres, orderData} from '../../redux/actions'
 import style from './Home.module.css'
 
 
 
 const Home = () => {
   const [name, setName]=useState('')
-  //const [filter, setFilter]=useState({})
+  const [filter, setFilter]=useState({})
   const [ primer, savePrimer ] = useState(false);
 
   const genreState = useSelector(state => state.genres)
@@ -33,40 +33,27 @@ const Home = () => {
 
   const handlerSubmit=async()=>{
     dispatch(getNameVideoGame(name))
+    //const aux=
+    //console.log(aux)
+  }
+  const handleChangeSelect=(event)=>{
+    const property= event.target.name;
+    const value= event.target.value;
 
+    //setForm({...form, [property]:value})
+    setFilter({...filter, [property]: value})
   }
 
-  const handleGenre=(event)=>{
-
-    const genre= event.target.value;
-
-    dispatch(getGenreFilter(genre))
+  const handlerSubmitFilter=(event)=>{
+    event.preventDefault();
+    const buttonName = event.target.name;
+    event.preventDefault();
+    if (buttonName==='clean'){
+      setFilter({})
+    }else{
+      dispatch(orderData(filter))
+    }
   }
-
-  const handlerOrigin=(event)=>{
-
-    const origin= event.target.value;
-
-    dispatch(getOrigin(origin))
-  }
-
-  const handlerOrder=(event)=>{
-
-    const order=event.target.value;
-
-    dispatch(getOrder(order))
-  }
-
-  // const handlerSubmitFilter=(event)=>{
-  //   event.preventDefault();
-  //   const buttonName = event.target.name;
-  //   event.preventDefault();
-  //   if (buttonName==='clean'){
-  //     setFilter({})
-  //   }else{
-  //     dispatch(orderData(filter))
-  //   }
-  // }
 
 
   return (
@@ -75,7 +62,7 @@ const Home = () => {
       <div className={style.containerFilterOrder}>
         <div className={style.order}>
           <h2>ORDER</h2>
-          <select name='order' onChange={handlerOrder}>
+          <select name='order' onChange={handleChangeSelect}>
             <option>--SELECT--</option>
             <option value='upward'>UPWARD</option>
             <option value='falling'>FALLING</option>
@@ -86,7 +73,7 @@ const Home = () => {
         </div>
         <div className={style.filter}>
           <h2>GENRE FILTER</h2>
-          <select name='genre' onChange={handleGenre}>
+          <select name='genre' onChange={handleChangeSelect}>
             {genreState?.map((genre, index)=>{
               return <option key={index} name={genre} value={genre}>{genre}</option>
             })}
@@ -95,14 +82,14 @@ const Home = () => {
 
         <div className={style.filterApiBdd}>
           <h2>SOURCE FILTER</h2>
-          <select name='origin' onChange={handlerOrigin}>
+          <select name='origin' onChange={handleChangeSelect}>
             <option>--SELECT--</option>
             <option value='api'>API</option>
             <option value='database'>DATABASE</option>
           </select>
         </div>
-        {/* <button name='search' disabled={Object.keys(filter).length===0} onClick={handlerSubmitFilter} className={style.filterButton}>SEARCH</button>
-        <button name='clean' disabled={Object.keys(filter).length===0} onClick={handlerSubmitFilter} className={style.filterButton}>CLEAN</button> */}
+        <button name='search' disabled={Object.keys(filter).length===0} onClick={handlerSubmitFilter} className={style.filterButton}>SEARCH</button>
+        <button name='clean' disabled={Object.keys(filter).length===0} onClick={handlerSubmitFilter} className={style.filterButton}>CLEAN</button>
       </div>
       <Cards />
       
@@ -110,4 +97,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home*/

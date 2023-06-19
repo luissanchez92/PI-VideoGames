@@ -7,8 +7,6 @@ import validation from './validation';
 import { NavLink } from 'react-router-dom'
 import axios from 'axios';
 
-
-
 const Form = () => {
   const [form, setForm]=useState({
     name:'',

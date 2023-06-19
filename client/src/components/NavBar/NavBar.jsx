@@ -7,11 +7,11 @@ const NavBar=({handlerSubmit, handlerChange, name})=> {
   return (
     <div className={style.mainContainer}>
       <button className={style.buttonHome}>
-        <NavLink to='/home' className={style.NavLink}>Home</NavLink>
+        <NavLink to='/home' className={style.NavLink}>HOME</NavLink>
       </button>
 
       <button className={style.buttonCreate}>
-        <NavLink to='/create' className={style.NavLink} >Form</NavLink>
+        <NavLink to='/create' className={style.NavLink} >FORM</NavLink>
       </button>
 
       <label className={style.label}>Search VideoGame
@@ -22,8 +22,13 @@ const NavBar=({handlerSubmit, handlerChange, name})=> {
           className={style.input}
         />
       </label>
- 
-      <button type="button" disabled={!name} onClick={() => handlerSubmit()} className={style.buttonSearch} >Search</button>
+
+      <div>
+        <button type="button" disabled={!name} onClick={() => handlerSubmit()} className={style.buttonSearch} >SEARCH</button>
+
+      </div>
+
+      
 
     </div>
   )
