@@ -11,7 +11,7 @@ const Card = (props) => {
       </NavLink>
 
       <ul className={style.genre}>
-        {props.genres.map((genre)=>(
+        {props.genres?.map((genre)=>(
           <li key={genre}>{genre}</li>
         ))}
       </ul>

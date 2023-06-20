@@ -4,7 +4,8 @@ const initialState={
     videoGames:[],
     videoGameID:[],
     genres:[],
-    nameGame:[]
+    nameGame:[],
+    filter:[]
 }
 
 const rootReducer=(state=initialState, action)=>{
@@ -32,7 +33,7 @@ const rootReducer=(state=initialState, action)=>{
                     return {...state, videoGames: [...responseUpward]}
                 }
                 if (action.payload==='falling'){
-                    const responseFalling=state.videoGames.slice().sort((b,a)=>b.name.localeCompare(a.name))
+                    const responseFalling=state.videoGames.slice().sort((a,b)=>b.name.localeCompare(a.name))
                     return {...setTimeout, videoGames:[...responseFalling]}
                 }
                 if(action.payload==='hight-rating'){
@@ -40,18 +41,25 @@ const rootReducer=(state=initialState, action)=>{
                     return {...state, videoGames:[...responseHightRating]}
                 }
                 if(action.payload==='low-rating'){
-                    const responseLowRating=state.videoGames.sort((b,a)=>b.rating-a.rating)
+                    const responseLowRating=state.videoGames.sort((a,b)=>b.rating-a.rating)
                     return {...state, videoGames:[...responseLowRating]}
                 }
                 break;
         case GET_ORIGIN:
-            const responseOrigin=state.videoGames.filter(element=>element.create===action.payload)
-            return {
-                ...state, videoGames:[...responseOrigin]
+            if (action.payload==='database'){
+                const responseOrigin=state.videoGames.filter(element=>element.create===true)
+                return {...state, videoGames:[...responseOrigin]}
             }
+            if (action.payload==='api'){
+                const responseOriginApi=state.videoGames.filter(element=>element.create===false)
+                return {...state, videoGames:[...responseOriginApi]}
+            }
+            break
+            
         default: 
             return {...state}
     }
 }
 
 export default rootReducer;
+

@@ -10,7 +10,6 @@ import style from './Home.module.css'
 
 const Home = () => {
   const [name, setName]=useState('')
-  //const [filter, setFilter]=useState({})
   const [ primer, savePrimer ] = useState(false);
 
   const genreState = useSelector(state => state.genres)
@@ -27,7 +26,8 @@ const Home = () => {
   },[primer,dispatch])
 
   const handlerChange=(event)=>{
-    setName(event.target.value.toLowerCase())
+    const name=event.target.value
+    setName(name)
 
   }
 
@@ -56,19 +56,7 @@ const Home = () => {
 
     dispatch(getOrder(order))
   }
-
-  // const handlerSubmitFilter=(event)=>{
-  //   event.preventDefault();
-  //   const buttonName = event.target.name;
-  //   event.preventDefault();
-  //   if (buttonName==='clean'){
-  //     setFilter({})
-  //   }else{
-  //     dispatch(orderData(filter))
-  //   }
-  // }
-
-
+  
   return (
     <div className={style.mainContainer}>
       <NavBar handlerChange={handlerChange} handlerSubmit={handlerSubmit} name={name}/>
@@ -101,8 +89,7 @@ const Home = () => {
             <option value='database'>DATABASE</option>
           </select>
         </div>
-        {/* <button name='search' disabled={Object.keys(filter).length===0} onClick={handlerSubmitFilter} className={style.filterButton}>SEARCH</button>
-        <button name='clean' disabled={Object.keys(filter).length===0} onClick={handlerSubmitFilter} className={style.filterButton}>CLEAN</button> */}
+        
       </div>
       <Cards />
       

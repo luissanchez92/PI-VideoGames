@@ -11,13 +11,13 @@ const Cards = () => {
           (allData.length > 0) ? (
             allData.map(element=>{
               return <Card
-                  key={element.id}
-                  id={element.id}
-                  name= {element.name}
-                  img= {element.imagen}
-                  genres= {element.genres}
+                key={element.id}
+                id={element.id}
+                name= {element.name}
+                img= {element.imagen}
+                genres= {element.genres}
               />
-                  
+    
             })
           ) : (
             null

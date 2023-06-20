@@ -84,7 +84,7 @@ const getAllBdd=async()=>{
             platforms: element.platforms,
             imagen: element.imagen,
             released: element.released,
-            describe: element.description,
+            description: element.description,
             rating: element.rating,
             genres: genresData,
             create: element.create
@@ -119,13 +119,11 @@ const getAllApi=async()=>{
             })
         })
     )
-
     let allResponse=[];
     response.map(array=>{
         allResponse=allResponse.concat(array)
     });
     return allResponse;
-
 }
 
 

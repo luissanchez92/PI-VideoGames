@@ -8,7 +8,6 @@ export const getVideoGames = () => {
             type: GET_GAMES, 
             payload: response.data
         })
-
     }
 }
 
@@ -43,29 +42,22 @@ export const getGenres=()=>{
 }
 
 export const getGenreFilter=(genre)=>{
-    return async function(dispatch){
-        return dispatch({
-            type: GET_GENREFILTER,
-            payload: genre
-        })
-    }
+    return({
+        type: GET_GENREFILTER,
+        payload: genre
+    })
 }
 
 export const getOrder=(order)=>{
-    return async function(dispatch){
-        return dispatch({
-            type: GET_ORDER,
-            payload: order
-        })
-    }
+    return({
+        type: GET_ORDER,
+        payload: order
+    })
 }
 
 export const getOrigin=(origin)=>{
-    return async function(dispatch){
-        return dispatch({
-            typeof: GET_ORIGIN,
-            payload: origin
-        })
-    }
-
+    return({
+        type: GET_ORIGIN,
+        payload: origin
+    })
 }
