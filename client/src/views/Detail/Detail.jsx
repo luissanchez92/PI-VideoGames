@@ -24,16 +24,16 @@ const Detail = () => {
           <div className={style.divContainer}>
             <h1 className={style.title}>DESCRIPTION OF THE VIDEOGAME</h1>
             <h2 style={style.name}>NAME: {detail.name}</h2>
-            <h2 style={style.id}>ID: {detail.id}</h2>
-            <img src={detail.imagen} className={style.videoImage} alt='foodImage'/>
-            <ul>GENRES: 
+            <h3 style={style.id}>ID: {detail.id}</h3>
+            <img src={detail.imagen} className={style.image} alt='foodImage'/>
+            <ul className={style.genres}>GENRES: 
               {detail.genres?.map((genre)=>(
                 <li key={genre}>{genre}</li>
               ))}
             </ul>
-            <h2>RELEASED: {detail.released}</h2>
-            <h2>RATING: {detail.rating}</h2>
-            <ul>PLATFORMS: 
+            <h3 className={style.h3}>RELEASED: {detail.released}</h3>
+            <h3 className={style.h3}>RATING: {detail.rating}</h3>
+            <ul className={style.platforms}>PLATFORMS: 
               {detail.platforms?.map((platform)=>(
                 <li key={platform}>{platform}</li>
               ))}

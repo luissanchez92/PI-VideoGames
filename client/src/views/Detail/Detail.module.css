@@ -9,12 +9,14 @@
     border-radius: 30px 30px 30px 30px;
     margin-top: 20px;
     margin-bottom: 20px;
+    border: 2px solid blue;
 }
 
-.videoImage{
+.image{
     width: 350px;
     height: 300px;
     border-radius: 15px;
+    border: 2px solid blue;
 
 }
 
@@ -43,10 +45,22 @@
     font-size: 20px;
 
 }
+.genres{
+    font-family: cursive;
+    font-size: 20px;
+}
+.platforms{
+    font-family: cursive;
+    font-size: 20px;
+}
+style.h3{
+    font-family: cursive;
+    font-size: 20px;
+}
+
 .NavLink{
     text-decoration: none;
     color: black;
     font-family: cursive;
     font-size: 25px;
-
 }

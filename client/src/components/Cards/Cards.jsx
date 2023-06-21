@@ -9,13 +9,13 @@ const Cards = () => {
     <div className={style.mainContainer}>
         {
           (allData.length > 0) ? (
-            allData.map(element=>{
+            allData.map((element, index)=>{
               return <Card
-                key={element.id}
+                key={index}
                 id={element.id}
                 name= {element.name}
                 img= {element.imagen}
-                genres= {element.genres}
+                genres={element.genres}
               />
     
             })

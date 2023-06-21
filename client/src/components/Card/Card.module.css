@@ -2,14 +2,12 @@
     border: 1px solid black;
     background-color: rgb(240, 158, 129);
     border-radius: 10px;
-    height: 350px;
-    width: 300px;
 }
 
 
 .cardImage{
-    max-width: 250px;
-    max-height: 200;
+    max-width: 150px;
+    max-height: 200px;
     border-radius: 15px;
 }
 .name{

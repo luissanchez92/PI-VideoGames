@@ -37,11 +37,11 @@ const rootReducer=(state=initialState, action)=>{
                     return {...setTimeout, videoGames:[...responseFalling]}
                 }
                 if(action.payload==='hight-rating'){
-                    const responseHightRating=state.videoGames.sort((a,b)=>a.rating-b.rating)
+                    const responseHightRating=state.videoGames.sort((a,b)=>b.rating-a.rating)
                     return {...state, videoGames:[...responseHightRating]}
                 }
                 if(action.payload==='low-rating'){
-                    const responseLowRating=state.videoGames.sort((a,b)=>b.rating-a.rating)
+                    const responseLowRating=state.videoGames.sort((a,b)=>a.rating-b.rating)
                     return {...state, videoGames:[...responseLowRating]}
                 }
                 break;

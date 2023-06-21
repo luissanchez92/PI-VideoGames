@@ -2,12 +2,12 @@ const { videoGameCreate, findOneVideoGame, getVideoGame, getVideoGameQuery }=req
 
 const searchVideoGames= async(req,res)=>{
     try{
-        const response= await getVideoGame()
+        const {page} = req.query
+        const response= await getVideoGame(page)
 
         return res.status(200).json(response)
 
     }catch(error){
-
         return res.status(400).json({error: error.message})
     }
 }

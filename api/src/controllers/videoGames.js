@@ -94,56 +94,86 @@ const getAllBdd=async()=>{
 }
 
 
-const getAllApi=async()=>{
-    let i=1
-    let response=[];
- 
-    while(i<6){
-        let promises=  await axios.get(`${API_VIDEOGAMES}?key=${API_KEY}&page=${i}`);
-        response.push(promises);
-        i++
-    }
-    response=(await Promise.all(response))
-    .map(proms=>
-        proms.data.results.map(element=>{
-            return ({
-                id: element.id,
-                name: element.name,
-                description: element.description,
-                platforms: element.platforms.map(element=>element.platform.name),
-                imagen: element.background_image,
-                rating: element.rating,
-                released: element.released,
-                genres: element.genres.map(element=>element.name),
-                create: false
-            })
-        })
-    )
-    let allResponse=[];
-    response.map(array=>{
-        allResponse=allResponse.concat(array)
-    });
-    return allResponse;
+const getAllApi=async(page, limit = 15)=>{
+
+    const url = await axios.get(`${API_VIDEOGAMES}?key=${API_KEY}&page=${page}&page_size=${limit}`); 
+    // while(i<6){
+    //     let promises=  await axios.get(`${API_VIDEOGAMES}?key=${API_KEY}&page=${i}`);
+    //     response.push(promises);
+    //     i++
+    // }
+
+    response = url.data.results.map(element => {
+        return {
+            id: element.id,
+            name: element.name,
+            description: element.description,
+            platforms: element.platforms.map(element=>element.platform.name),
+            imagen: element.background_image,
+            rating: element.rating,
+            released: element.released,
+            genres: element.genres.map(element=>element.name),
+            create: false
+        }
+    })
+    // response=(await Promise.all(response))
+    // .map(proms=>
+    //     proms.data.results.map(element=>{
+    //         return {
+    //             id: element.id,
+    //             name: element.name,
+    //             description: element.description,
+    //             platforms: element.platforms.map(element=>element.platform.name),
+    //             imagen: element.background_image,
+    //             rating: element.rating,
+    //             released: element.released,
+    //             genres: element.genres.map(element=>element.name),
+    //             create: false
+    //         }
+    //     })
+    // )
+    // let allResponse=[];
+    // response.map(array=>{
+    //     allResponse=allResponse.concat(array)
+    // });
+    return response;
 }
 
 
-const getVideoGame=async()=>{
-    const responseApi= await getAllApi();
-    const responseBdd= await getAllBdd();
+/**M */
+const getVideoGame=async(page)=>{
+    let responseBdd = await getAllBdd();
+    let response = [];    
+    if(parseInt(page) === 1){
 
-    const response=[...responseApi, ...responseBdd];
+        if(responseBdd.length < 15){
+            let result = (15 - responseBdd.length);
+            let responseApi = await getAllApi(1, result);            
+            response = responseBdd.concat(responseApi);            
+        } else {
+            let responseApi = await getAllApi(page)
+            response = response.concat(responseApi);
+        }
 
+    } else {
+
+        let responseApi = await getAllApi(page)
+        response = response.concat(responseApi);
+
+    }
+    console.clear();
+    console.log("******************************");
+    console.log(response);
     return response;
 }
 
 const getVideoGameQuery=async(name)=>{
 
-
     const responseAxios= (
         await axios.get(`${API_QUERY}=${name}&key=${API_KEY}`)
     ).data.results
 
-    const responseAxiosClean= responseAxios.map(element=>{
+    const responseAxiosClean= responseAxios.map((element)=>{
         return {
             id: element.id,
             name: element.name,
