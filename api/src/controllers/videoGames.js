@@ -94,16 +94,11 @@ const getAllBdd=async()=>{
 }
 
 
-const getAllApi=async(page, limit = 15)=>{
+const getAllApi=async(page, limit=15)=>{
 
     const url = await axios.get(`${API_VIDEOGAMES}?key=${API_KEY}&page=${page}&page_size=${limit}`); 
-    // while(i<6){
-    //     let promises=  await axios.get(`${API_VIDEOGAMES}?key=${API_KEY}&page=${i}`);
-    //     response.push(promises);
-    //     i++
-    // }
-
-    response = url.data.results.map(element => {
+ 
+    const response = url.data.results.map(element => {
         return {
             id: element.id,
             name: element.name,
@@ -116,54 +111,29 @@ const getAllApi=async(page, limit = 15)=>{
             create: false
         }
     })
-    // response=(await Promise.all(response))
-    // .map(proms=>
-    //     proms.data.results.map(element=>{
-    //         return {
-    //             id: element.id,
-    //             name: element.name,
-    //             description: element.description,
-    //             platforms: element.platforms.map(element=>element.platform.name),
-    //             imagen: element.background_image,
-    //             rating: element.rating,
-    //             released: element.released,
-    //             genres: element.genres.map(element=>element.name),
-    //             create: false
-    //         }
-    //     })
-    // )
-    // let allResponse=[];
-    // response.map(array=>{
-    //     allResponse=allResponse.concat(array)
-    // });
     return response;
 }
 
-
-/**M */
 const getVideoGame=async(page)=>{
-    let responseBdd = await getAllBdd();
-    let response = [];    
+
+    const responseBdd = await getAllBdd();
+    let response =[];
+
     if(parseInt(page) === 1){
 
         if(responseBdd.length < 15){
             let result = (15 - responseBdd.length);
-            let responseApi = await getAllApi(1, result);            
+            const responseApi = await getAllApi(1, result);            
             response = responseBdd.concat(responseApi);            
         } else {
-            let responseApi = await getAllApi(page)
+            const responseApi = await getAllApi(page)
             response = response.concat(responseApi);
         }
 
-    } else {
-
-        let responseApi = await getAllApi(page)
+    }else{
+        const responseApi = await getAllApi(page)
         response = response.concat(responseApi);
-
     }
-    console.clear();
-    console.log("******************************");
-    console.log(response);
     return response;
 }
 
@@ -190,7 +160,7 @@ const getVideoGameQuery=async(name)=>{
         include: [{model: Genre}]
     })
 
-    const response=[...responseBdd, ...responseAxiosClean]
+    let response=[...responseBdd, ...responseAxiosClean]
 
     if (response.length===0) throw Error('your search was not found')
 

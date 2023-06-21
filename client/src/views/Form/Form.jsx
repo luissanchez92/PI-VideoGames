@@ -18,7 +18,6 @@ const Form = () => {
     genres:[]
 
   })
-
   const [error, setError]=useState({})
 
   const genreState = useSelector(state => state.genres)
@@ -26,7 +25,7 @@ const Form = () => {
 
   const aux=platformState.map(element=>element.platforms.map(element=>element))
   const newAux=aux.flat()
-  //const platformsFilter=[...new Set(newAux)]
+  
   const platformsFilter = newAux.filter((element, index, array) =>(array.indexOf(element) ===index))
   
 
@@ -34,11 +33,10 @@ const Form = () => {
 
   useEffect(()=>{
     dispatch(getVideoGames())
-  }, [dispatch])
-
-  useEffect(()=>{
     dispatch(getGenres())
+
   },[dispatch])
+
 
   const handlerChange=(event)=>{
     const property= event.target.name;
