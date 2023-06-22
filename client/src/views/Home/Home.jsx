@@ -10,11 +10,12 @@ import style from './Home.module.css'
 
 const Home = () => {
   const [name, setName]=useState('')
-  const [ page, setPage ] = useState(1);
-  const [ primer, savePrimer ] = useState(false);
-  const [ second, setSecond ] = useState(false);
+  const [ page, setPage ] =useState(1);
+  const [ primer, savePrimer ] =useState(false);
+  const [ second, setSecond ] =useState(false);
 
   const genreState = useSelector(state => state.genres)
+  
 
   const dispatch=useDispatch()
 
@@ -65,20 +66,21 @@ const Home = () => {
   }
 
   const back =()=>{
-    let pageAnterior = page - 1;
-    setPage(pageAnterior);
+    let nextPage = page - 1;
+    setPage(nextPage);
     savePrimer(false);
   }
 
   const next =()=>{
-    let pageAnterior=page + 1;
-    setPage(pageAnterior);
+    let backPage=page + 1;
+    setPage(backPage);
     savePrimer(false);
   }
   
   return (
     <div className={style.mainContainer}>
       <NavBar handlerChange={handlerChange} handlerSubmit={handlerSubmit} name={name}/>
+
       <div className={style.containerFilterOrder}>
         <div className={style.filter}>
           <h2 className={style.h2}>ORDER</h2>
@@ -114,7 +116,7 @@ const Home = () => {
       <br />
       <br />
 
-      <div className='class-section-button'>
+      <div className={style.buttonPg}>
         {
           (page >= 2) ? (
             <button type="button" onClick={back} className={style.buttonPag}>BACK</button>

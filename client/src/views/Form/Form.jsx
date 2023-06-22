@@ -32,9 +32,9 @@ const Form = () => {
   const dispatch=useDispatch()
 
   useEffect(()=>{
-    dispatch(getVideoGames())
+    dispatch(getVideoGames(1))
     dispatch(getGenres())
-
+    
   },[dispatch])
 
 
@@ -104,11 +104,12 @@ const Form = () => {
       released:'',
       rating: Number,
       imagen:'',
-      platforms:[],
-      genres:[] 
+      platforms:'',
+      genres:'' 
     })
 
   }
+
 
   return (
 
@@ -116,9 +117,9 @@ const Form = () => {
 
         <div className={style.divContainer}>
 
-          <h2 className={style.titleH2}>Registration</h2>
+          <h2 className={style.titleH2}>REGISTRATION VIDEO-GAME</h2>
 
-          <label htmlFor='name' className={style.formName}>Name:</label>
+          <label htmlFor='name' className={style.formName}>NAME:</label>
             <input
               type='text'
               name='name'
@@ -129,7 +130,7 @@ const Form = () => {
             />
             {error.name ? <span>{error.name}</span> : ''}
 
-          <label htmlFor='description' className={style.formDescription}>Description:</label>
+          <label htmlFor='description' className={style.formDescription}>DESCRIPTION:</label>
             <input
               type='text'
               name='description'
@@ -140,7 +141,7 @@ const Form = () => {
             />
             {error.description ? <span>{error.description}</span> : ''}
 
-          <label className={style.formReleased}>Released:</label> 
+          <label className={style.formReleased}>RELEASED:</label> 
             <input
               type='date'
               name='released'
@@ -151,7 +152,7 @@ const Form = () => {
             />
             {error.released ? <span>{error.released}</span> : ''}
 
-          <label className={style.formRating}>Rating:</label>
+          <label className={style.formRating}>RATING:</label>
             <input
               type='number'
               name='rating'
@@ -162,7 +163,7 @@ const Form = () => {
             />
             {error.rating ? <span>{error.rating}</span> : ''}
 
-          <label className={style.formImage}>Image:</label>
+          <label className={style.formImage}>IMAGE:</label>
             <input
               type='url'
               name='imagen'
@@ -173,7 +174,7 @@ const Form = () => {
             />
             {error.imagen ? <span>{error.imagen}</span> : ''}
 
-            <div>
+            <div> 
               <h3 className={style.platformH3}>SELECT PLATFORMS</h3>
 
               {
@@ -183,7 +184,7 @@ const Form = () => {
                   </label>
                 ))
               }
-
+ 
             </div>
             <span>{error.platforms && form.platforms.length===0 ? <span>{error.platforms}</span> : ''}</span>
 
@@ -199,11 +200,11 @@ const Form = () => {
               }
 
             </div>
-            <span>{error.genres && form.genres.length===0 ? <span>{error.genres}</span> : ''}</span>
+            <span>{error.genres && form.genres.length===0  ? <span>{error.genres}</span> : ''}</span>
 
           <div className={style.divButton}>
           <button className={style.buttonBack}>
-            <NavLink to='/home' className={style.NavLink}>Back</NavLink>
+            <NavLink to='/home' className={style.NavLink}>BACK</NavLink>
           </button>
           <button disabled={!form.name  || !form.description || !form.rating || !form.imagen || !form.released || !form.platforms || !form.genres || form.platforms.length===0 || form.genres.length===0 }
            className={style.buttonForm}>CREATE

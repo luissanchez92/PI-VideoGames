@@ -120,6 +120,7 @@
 
 }
 
+
 .NavLink{
     text-decoration: none;
     color: black;
@@ -127,4 +128,9 @@
 }
 .textPlatforms{
     font-family: cursive;
+}
+
+.buttonMasPlatform{
+    cursor: pointer;
+
 }

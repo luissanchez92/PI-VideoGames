@@ -6,6 +6,7 @@
     justify-content: space-between;
     padding-inline: 70px;
     margin-bottom: 20px;
+    border-bottom: 2px solid black;
 
 }
 
@@ -41,6 +42,13 @@
 
 }
 
+.buttonPg{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 400px;
+
+}
+
 .buttonPag{
     width: 120px;
     height: 40px;
@@ -57,13 +65,10 @@
 
 .page{
     background-color: #0fd4dd ;
-    height: 45px;
+    height: 40px;
     width: 100px;
     border: 2px solid black;
     font-size: 20px;
     font-family: cursive;
     border-radius: 15px;
-
-
-
 }

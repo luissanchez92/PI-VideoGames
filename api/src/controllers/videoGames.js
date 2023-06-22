@@ -139,36 +139,41 @@ const getVideoGame=async(page)=>{
 
 const getVideoGameQuery=async(name)=>{
 
-    const responseAxios= (
-        await axios.get(`${API_QUERY}=${name}&key=${API_KEY}`)
-    ).data.results
+    try{
+        const responseAxios= (
+            await axios.get(`${API_QUERY}=${name}&key=${API_KEY}`)
+        ).data.results
+    
+        const responseAxiosClean= responseAxios.map((element)=>{
+            return {
+                id: element.id,
+                name: element.name,
+                imagen: element.background_image,
+                genres: element.genres.map(element=>element.name),
+                released:element.released,
+                rating:element.rating,
+                create: false
+            }
+        })
+    
+        const responseBdd = await Videogame.findAll({
+            where: {name: {[Op.iLike]:`${name}`}},
+            include: [{model: Genre}]
+        })
+    
+        let response=[...responseBdd, ...responseAxiosClean]
+        
+        const searchNameQuery= response.filter(
+            element=>element.name.toLowerCase().includes(name.toLowerCase())
+        )
+        if (searchNameQuery.length===0) throw Error('Name not found')
 
-    const responseAxiosClean= responseAxios.map((element)=>{
-        return {
-            id: element.id,
-            name: element.name,
-            imagen: element.background_image,
-            genres: element.genres.map(element=>element.name),
-            released:element.released,
-            rating:element.rating,
-            create: false
-        }
-    })
+        return searchNameQuery;
 
-    const responseBdd = await Videogame.findAll({
-        where: {name: {[Op.iLike]:`${name}`}},
-        include: [{model: Genre}]
-    })
+    }catch(error){
+        return error.message
 
-    let response=[...responseBdd, ...responseAxiosClean]
-
-    if (response.length===0) throw Error('your search was not found')
-
-    const searchNameQuery= response.filter(
-        element=>element.name.toLowerCase().includes(name.toLowerCase())
-    )
-
-    return searchNameQuery;
+    }
 
 }
 
