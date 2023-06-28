@@ -4,10 +4,10 @@ const initialState={
     videoGames:[],
     videoGameID:[],
     genres:[],
-    filter:[],
+    filter:[]
 }
 
-const rootReducer = (state = initialState, action) => {
+const rootReducer = (state =initialState, action) => {
     switch (action.type) {
         case GET_GAMES:
             return { ...state, videoGames: action.payload, videoGameID: [] };

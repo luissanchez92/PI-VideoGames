@@ -9,7 +9,6 @@ const Card = (props) => {
       <NavLink to={`/detail/${props.id}`}>
         <img src={props.img} className={style.cardImage} alt='foodImage'/>
       </NavLink>
-
       <ul className={style.genre}>
         {props.genres?.map((genre)=>(
           <li key={genre}>{genre}</li>

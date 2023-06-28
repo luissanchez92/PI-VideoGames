@@ -36,7 +36,7 @@ const searchVideoGamesID= async(req,res)=>{
 
     }catch(error){
 
-        return res.status(404).send(`the id: ${id} not found`)
+        return res.status(404).json({error: error.message})
     }
 
 }

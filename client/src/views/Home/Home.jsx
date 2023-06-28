@@ -14,8 +14,7 @@ const Home = () => {
   const [ primer, savePrimer ] =useState(false);
   const [ second, setSecond ] =useState(false);
 
-  const genreState = useSelector(state => state.genres)
-  
+  const genreState= useSelector(state => state.genres)
 
   const dispatch=useDispatch()
 
@@ -118,12 +117,12 @@ const Home = () => {
 
       <div className={style.buttonPg}>
         {
-          (page >= 2) ? (
+          (page >= 2 ) ? (
             <button type="button" onClick={back} className={style.buttonPag}>BACK</button>
           ) : (
             null
           )
-        }          
+        }
         <button type="button" onClick={next} className={style.buttonPag}>NEXT</button>
         <span className={style.page}>PAGE: {page}</span>
       </div>

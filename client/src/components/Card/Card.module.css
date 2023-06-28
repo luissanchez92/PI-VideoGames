@@ -9,7 +9,7 @@
     max-width: 150px;
     max-height: 200px;
     border-radius: 15px;
-    border: 1px solid rgb(46, 46, 156);
+    border: 1px solid black;
 }
 .name{
     font-family: cursive;
