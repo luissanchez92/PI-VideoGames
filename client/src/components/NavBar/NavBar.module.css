@@ -1,88 +1,82 @@
-.mainContainer{
-   border-radius: 5px 5px 0px 0px;
-   background-color: aquamarine;
-   height: 50px;
+.mainContainer {
+    border-radius: 5px 5px 0px 0px;
+    background-color: aquamarine;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-bottom: 10px;
-
 }
-
-.buttonHome{
+  
+.buttonHome,
+.buttonCreate,
+.buttonSearch {
     width: 120px;
     height: 40px;
-    background-color: #0fd4dd ;
+    background-color: #0fd4dd;
     border-radius: 15px;
     border: solid black 2px;
     margin-top: 5px;
     font-family: cursive;
     font-size: 20px;
-
-}
-.buttonHome:hover{
-    background-color:  #04eefa;
 }
   
-.buttonHome:active{
+.buttonHome:hover,
+.buttonCreate:hover,
+.buttonSearch:hover {
     background-color: #04eefa;
-}
-
-.buttonCreate{
-    width: 120px;
-    height: 40px;
-    background-color: #0fd4dd ;
-    border-radius: 15px;
-    border: solid black 2px;
-    margin-top: 5px;
-    font-family: cursive;
-    font-size: 20px;
-
-}
-.buttonCreate:hover{
-    background-color:  #04eefa;
 }
   
-.buttonCreate:active{
+.buttonHome:active,
+.buttonCreate:active,
+.buttonSearch:active {
     background-color: #04eefa;
-}
-
-
-.buttonSearch{
-    width: 120px;
-    height: 40px;
-    background-color: #0fd4dd ;
-    border-radius: 15px;
-    border: solid black 2px;
-    margin-top: 5px;
-    font-family: cursive;
-    font-size: 20px;
-    cursor: pointer;
-
-}
-.buttonSearch:hover{
-    background-color:  #04eefa;
 }
   
-.buttonSearch:active{
-    background-color: #04eefa;
-}
-
-.label{
+.label {
     margin-top: 10px;
     font-family: cursive;
     font-size: 20px;
 }
-.input{
+  
+.input {
     border: solid black 2px;
     margin-left: 4px;
     height: 40px;
     margin-top: 2px;
     border-radius: 5px;
-
 }
-.NavLink{
+  
+.NavLink {
     text-decoration: none;
     color: black;
-
+}
+  
+@media (max-width: 600px) {
+    .mainContainer {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      flex-direction: column;
+      height: auto;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+  
+    .buttonHome,
+    .buttonCreate,
+    .buttonSearch {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      width: 200px;
+      margin-top: 10px;
+    }
+  
+    .label {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      margin-top: 20px;
+    }
+  
+    .input {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      width: 80%;
+      margin: 10px 0;
+    }
 }

@@ -1,67 +1,88 @@
-.mainContainer{
+.mainContainer {
     display: flex;
     justify-content: center;
 }
-.divContainer{
+  
+.divContainer {
     background-color: #9ca3ad;
     height: auto;
-    width: 800px;
-    border-radius: 30px 30px 30px 30px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
     border: 2px solid blue;
 }
-
-.image{
-    width: 350px;
-    height: 300px;
+  
+.image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
     border-radius: 15px;
     border: 2px solid blue;
-
 }
-
-.buttonBack{
+  
+.buttonBack {
     margin-bottom: 20px;
     width: 120px;
     height: 40px;
-    background-color: #0fd4dd ;
+    background-color: #0fd4dd;
     border-radius: 15px;
     border: solid black 2px;
 }
-.buttonBack:hover{
-    background-color:  #04eefa;
-}
   
-.buttonBack:active{
+.buttonBack:hover {
     background-color: #04eefa;
 }
-
-.title{
+  
+.buttonBack:active {
+    background-color: #04eefa;
+}
+  
+.title {
     font-family: cursive;
     font-size: 30px;
 }
-.detail{
-    font-family: cursive;
-    font-size: 20px;
-
-}
-.genres{
-    font-family: cursive;
-    font-size: 20px;
-}
-.platforms{
+  
+  .detail,
+  .genres,
+  .platforms,
+  .NavLink {
     font-family: cursive;
     font-size: 20px;
 }
-style.h3{
-    font-family: cursive;
-    font-size: 20px;
-}
-
-
-.NavLink{
-    text-decoration: none;
-    color: black;
-    font-family: cursive;
-    font-size: 25px;
+  
+@media (max-width: 600px) {
+    .divContainer {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      width: 90%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .image {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .buttonBack {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      width: 100px;
+      height: 30px;
+      font-size: 16px;
+    }
+  
+    .title {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      font-size: 24px;
+    }
+  
+    .detail,
+    .genres,
+    .platforms,
+    .NavLink {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      font-size: 16px;
+    }
 }

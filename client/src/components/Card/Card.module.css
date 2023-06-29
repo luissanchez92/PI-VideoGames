@@ -1,4 +1,4 @@
-.mainContainer{
+/* .mainContainer{
     border: 2px solid black;
     background-color: rgb(240, 158, 129);
     border-radius: 10px;
@@ -20,4 +20,46 @@
     font-family: cursive;
     font-size: 20px;
 
+} */
+
+.mainContainer {
+    border: 2px solid black;
+    background-color: rgb(240, 158, 129);
+    border-radius: 10px;
+}
+  
+.cardImage {
+    max-width: 150px;
+    max-height: 200px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+  
+.name,
+.genre {
+    font-family: cursive;
+    font-size: 20px;
+}
+  
+@media (max-width: 600px) {
+    .mainContainer {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      width: 85vw;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+  
+    .cardImage {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      max-width: 100%;
+      max-height: auto;
+    }
+  
+    .name,
+    .genre {
+      /* Estilos específicos para pantallas de hasta 600px de ancho */
+      font-size: 16px;
+    }
 }

@@ -1,10 +1,11 @@
-.mainContainer{
+
+.mainContainer {
     border: 1px solid black;
     display: flex;
     justify-content: center;
 }
-
-.divContainer{
+  
+.divContainer {
     border: 3px solid black;
     background-color: #9ca3ad;
     border-radius: 15px;
@@ -15,58 +16,55 @@
     align-content: center;
     margin-top: 10px;
 }
-
-.titleH2{
+  
+.titleH2 {
     font-family: cursive;
     font-size: 30px;
 }
-
-.divButton{
+  
+.divButton {
     margin-top: 30px;
 }
-
-
-.input{
+  
+.input {
     height: 20px;
-    border:2px solid green;
+    border: 2px solid green;
     border-radius: 5px;
     background-color: rgb(153, 235, 153);
 }
-
-.inputError{
+  
+.inputError {
     height: 20px;
     border: 2px solid rgb(241, 21, 13) 2px;
     background-color: rgb(231, 161, 161);
     border-radius: 5px;
 }
-.checkError{
+  
+.checkError {
     border: 2px solid rgb(241, 21, 13) 2px;
     background-color: red;
-
 }
-.check{
-    border:2px solid green;
+  
+.check {
+    border: 2px solid green;
     background-color: green;
 }
-
-
-.label{
+  
+.label {
     font-family: cursive;
     font-size: 20px;
     padding: 5px;
 }
-
-
-.mapH3{
+  
+.mapH3 {
     font-family: cursive;
     font-size: 20px;
 }
-
-
-.buttonForm{
+  
+.buttonForm {
     width: 120px;
     height: 40px;
-    background-color: #0fd4dd ;
+    background-color: #0fd4dd;
     border-radius: 15px;
     border: solid black 2px;
     margin-top: 5px;
@@ -74,19 +72,19 @@
     font-size: 20px;
     margin-bottom: 10px;
 }
-.buttonForm:hover{
-    background-color:  #04eefa;
-}
   
-.buttonForm:active{
+.buttonForm:hover {
     background-color: #04eefa;
 }
-
-
-.buttonBack{
+  
+.buttonForm:active {
+    background-color: #04eefa;
+}
+  
+.buttonBack {
     width: 120px;
     height: 40px;
-    background-color: #0fd4dd ;
+    background-color: #0fd4dd;
     border-radius: 15px;
     border: solid black 2px;
     margin-top: 5px;
@@ -95,25 +93,35 @@
     text-decoration: none;
     margin-right: 10px;
 }
-.buttonBack:hover{
-    background-color:  #04eefa;
-}
   
-.buttonBack:active{
+.buttonBack:hover {
     background-color: #04eefa;
 }
-
-
-.NavLink{
+  
+.buttonBack:active {
+    background-color: #04eefa;
+}
+  
+.NavLink {
     text-decoration: none;
     color: black;
-
 }
-.textPlatforms{
+  
+.textPlatforms {
     font-family: cursive;
 }
-
-.buttonMasPlatform{
+  
+.buttonMasPlatform {
     cursor: pointer;
-
+}
+  
+@media (max-width: 600px) {
+    .divContainer {
+      width: 90%;
+      margin: 10px;
+    }
+  
+    .titleH2 {
+      font-size: 24px;
+    }
 }
