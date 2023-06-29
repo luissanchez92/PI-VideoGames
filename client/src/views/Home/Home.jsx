@@ -15,6 +15,7 @@ const Home = () => {
   const [ second, setSecond ] =useState(false);
 
   const genreState= useSelector(state => state.genres)
+  const availableGames= useSelector(state=> state.videoGames)
 
   const dispatch=useDispatch()
 
@@ -111,7 +112,7 @@ const Home = () => {
         </div>
         
       </div>
-      <Cards />
+      <Cards/>
       <br />
       <br />
 
@@ -123,7 +124,13 @@ const Home = () => {
             null
           )
         }
-        <button type="button" onClick={next} className={style.buttonPag}>NEXT</button>
+        {
+          (name || !availableGames || availableGames.length<15 ) ? (
+            null
+          ) : (
+            <button type="button" onClick={next} className={style.buttonPag}>NEXT</button>
+          )
+        }
         <span className={style.page}>PAGE: {page}</span>
       </div>
 

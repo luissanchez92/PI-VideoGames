@@ -22,8 +22,11 @@ const validation=(form)=>{
     if(!/^\d{1,2}(\.\d{1,2})?$/.test(form.rating)){
         error.rating='(Rating must be between 0 and 100, maximum 2 decimal)'
     }
+    if(!form.imagen){
+        error.image='(Enter image must be in format jpeg | jpg | gif | png | svg)'
+    }
     if (!/\.(jpeg|jpg|gif|png|svg)$/i.test(form.imagen)){
-        error.imagen='(The image must be in format jpeg|jpg|gif|png|svg)'
+        error.image='(The image must be in format jpeg | jpg | gif | png | svg)'
     }
     if(form.platforms.length===0){
         error.platforms='(Select at least 1 platform)'

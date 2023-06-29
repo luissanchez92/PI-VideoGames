@@ -27,13 +27,13 @@
     background-color: #0fd4dd ;
     border-radius: 15px;
     border: solid black 2px;
-    transition-duration: 0.9s;
-
-    .buttonBack:hover{
-        background-color: #088dbc;
-        color: #0fd4dd;
-
-    }
+}
+.buttonBack:hover{
+    background-color:  #04eefa;
+}
+  
+.buttonBack:active{
+    background-color: #04eefa;
 }
 
 .title{

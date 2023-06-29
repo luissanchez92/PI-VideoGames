@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import Card from "../Card/Card"
 import style from './Cards.module.css'
-const Cards = ({getQuery}) => {
+const Cards = () => {
 
   const allData=useSelector(store=>store.videoGames)
           
@@ -21,7 +21,7 @@ const Cards = ({getQuery}) => {
             })
           ) : (
             null
-          )    
+          )
         }
     </div>
   )

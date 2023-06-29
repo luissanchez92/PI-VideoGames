@@ -25,70 +25,39 @@
     margin-top: 30px;
 }
 
-.formName{
+
+.input{
+    height: 20px;
+    border:2px solid green;
+    border-radius: 5px;
+    background-color: rgb(153, 235, 153);
+}
+
+.inputError{
+    height: 20px;
+    border: 2px solid rgb(241, 21, 13) 2px;
+    background-color: rgb(231, 161, 161);
+    border-radius: 5px;
+}
+.checkError{
+    border: 2px solid rgb(241, 21, 13) 2px;
+    background-color: red;
+
+}
+.check{
+    border:2px solid green;
+    background-color: green;
+}
+
+
+.label{
     font-family: cursive;
     font-size: 20px;
     padding: 5px;
 }
 
-.inputName{
-    height: 20px;
-    border-radius: 5px;
-}
 
-
-.formDescription{
-    font-family: cursive;
-    font-size: 20px;
-    padding: 5px;
-}
-
-.inputDescription{
-    height: 20px;
-    border-radius: 5px;
-}
-
-.formReleased{
-    font-family: cursive;
-    font-size: 20px;
-    padding: 5px;
-}
-
-.inputReleased{
-    height: 20px;
-    border-radius: 5px;
-}
-
-.formRating{
-    font-family: cursive;
-    font-size: 20px;
-    padding: 5px;
-}
-
-.inputRating{
-    height: 20px;
-    border-radius: 5px;
-}
-
-.formImage{
-    font-family: cursive;
-    font-size: 25px;
-    padding: 5px;
-}
-
-.inputImage{
-    height: 20px;
-    border-radius: 5px;
-
-}
-
-
-.platformH3{
-    font-family: cursive;
-    font-size: 20px;
-}
-
-.genresH3{
+.mapH3{
     font-family: cursive;
     font-size: 20px;
 }
@@ -105,6 +74,14 @@
     font-size: 20px;
     margin-bottom: 10px;
 }
+.buttonForm:hover{
+    background-color:  #04eefa;
+}
+  
+.buttonForm:active{
+    background-color: #04eefa;
+}
+
 
 .buttonBack{
     width: 120px;
@@ -117,7 +94,13 @@
     font-size: 20px;
     text-decoration: none;
     margin-right: 10px;
-
+}
+.buttonBack:hover{
+    background-color:  #04eefa;
+}
+  
+.buttonBack:active{
+    background-color: #04eefa;
 }
 
 

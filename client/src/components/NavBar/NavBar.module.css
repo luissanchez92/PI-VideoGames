@@ -20,6 +20,13 @@
     font-size: 20px;
 
 }
+.buttonHome:hover{
+    background-color:  #04eefa;
+}
+  
+.buttonHome:active{
+    background-color: #04eefa;
+}
 
 .buttonCreate{
     width: 120px;
@@ -32,6 +39,14 @@
     font-size: 20px;
 
 }
+.buttonCreate:hover{
+    background-color:  #04eefa;
+}
+  
+.buttonCreate:active{
+    background-color: #04eefa;
+}
+
 
 .buttonSearch{
     width: 120px;
@@ -44,6 +59,13 @@
     font-size: 20px;
     cursor: pointer;
 
+}
+.buttonSearch:hover{
+    background-color:  #04eefa;
+}
+  
+.buttonSearch:active{
+    background-color: #04eefa;
 }
 
 .label{

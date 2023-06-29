@@ -62,6 +62,14 @@
     cursor: pointer;
 
 }
+.buttonPag:hover{
+    background-color:  #04eefa;
+}
+  
+.buttonPag:active{
+    background-color: #04eefa;
+}
+
 
 .page{
     background-color: #0fd4dd ;
