@@ -13,6 +13,7 @@ const Home = () => {
   const [ page, setPage ] =useState(1);
   const [ primer, savePrimer ] =useState(false);
   const [ second, setSecond ] =useState(false);
+ 
 
   const genreState= useSelector(state => state.genres)
   const availableGames= useSelector(state=> state.videoGames)
@@ -21,6 +22,7 @@ const Home = () => {
 
   useEffect( ()=>{
     if(primer === false){
+    
       dispatch( getVideoGames(page));
       savePrimer(true);
     }
@@ -28,6 +30,7 @@ const Home = () => {
     if(second === false){
       dispatch( getGenres());
       setSecond(true);
+
     }
 
   },[primer,dispatch, page, second])
@@ -45,17 +48,17 @@ const Home = () => {
   }
 
   const handleGenre=(event)=>{
-
     const genre= event.target.value;
-
     dispatch(getGenreFilter(genre))
+  
   }
 
   const handlerOrigin=(event)=>{
-
+  
     const origin= event.target.value;
 
     dispatch(getOrigin(origin))
+    
   }
 
   const handlerOrder=(event)=>{
@@ -66,15 +69,18 @@ const Home = () => {
   }
 
   const back =()=>{
+    
     let nextPage = page - 1;
     setPage(nextPage);
     savePrimer(false);
+    
   }
 
   const next =()=>{
     let backPage=page + 1;
     setPage(backPage);
     savePrimer(false);
+    
   }
   
   return (
@@ -110,7 +116,6 @@ const Home = () => {
             <option value='database'>DATABASE</option>
           </select>
         </div>
-        
       </div>
       <Cards/>
       <br />

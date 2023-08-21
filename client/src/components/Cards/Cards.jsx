@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import Card from "../Card/Card"
 import style from './Cards.module.css'
+import Spinner from "../Spinner/Spinner"
 const Cards = () => {
 
   const allData=useSelector(store=>store.videoGames)
@@ -20,7 +21,7 @@ const Cards = () => {
     
             })
           ) : (
-            null
+            <Spinner/>
           )
         }
     </div>
